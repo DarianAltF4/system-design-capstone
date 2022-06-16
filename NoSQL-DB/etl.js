@@ -70,9 +70,8 @@ const etlAsync = async (file, etl, type) => {
         id = +id;
         let photo = {id, url};
         stream.pause()
-        let rev = await newReview.find({review_id}).limit(-1)[0];
-        if (rev !== undefined) {
-          console.log({rev})
+        let rev = await newReview.findOne({review_id});
+        if (rev !== null) {
           rev.photos.addToSet(photo);
           dataToAdd.push(rev);
         }
