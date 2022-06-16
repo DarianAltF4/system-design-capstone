@@ -128,17 +128,17 @@ const etlAsync = async (file, etl, type) => {
       }
       if (type === 'reviews') {
         console.log("******Reviews Finished******");
-        let csvFile = path.resolve(__dirname, '../../SDC-app-data/csv-test/characteristics.csv')
+        let csvFile = path.resolve(__dirname, '../../SDC-app-data/csv-data/characteristics.csv')
         etlAsync(csvFile, 'noFuncitonNeeded', 'char')
       }
       if (type === 'char') {
         console.log('******Characteristics Finished******')
-        let csvFile = path.resolve(__dirname, '../../SDC-app-data/csv-test/reviews_photos.csv')
+        let csvFile = path.resolve(__dirname, '../../SDC-app-data/csv-data/reviews_photos.csv')
         etlAsync(csvFile, etlReviewPhotos, 'photo')
       }
       if(type === 'photo') {
         console.log('******Photos Finished******')
-        let csvFile = path.resolve(__dirname, '../../SDC-app-data/csv-test/characteristic_reviews.csv')
+        let csvFile = path.resolve(__dirname, '../../SDC-app-data/csv-data/characteristic_reviews.csv')
         etlAsync(csvFile, etlCharacteristics, 'rev-char')
       }
       if(type === 'rev-char') {
@@ -152,4 +152,4 @@ const etlAsync = async (file, etl, type) => {
     });
 }
 
-etlAsync(path.resolve(__dirname, '../../SDC-app-data/csv-test/reviews.csv'), etlReviews, 'reviews');
+etlAsync(path.resolve(__dirname, '../../SDC-app-data/csv-data/reviews.csv'), etlReviews, 'reviews');
