@@ -148,6 +148,10 @@ app.delete('/reviews/:review_id', (req, res) => {
     });
 });
 
+app.get('/loaderio-0acae19ad6dd40d0d5a26f38e4a73ab4.txt', (req, res) => {
+  res.sendFile('./loaderio-0acae19ad6dd40d0d5a26f38e4a73ab4.txt')
+})
+
 app.listen(port, () => {
   console.log(`Server Listening on port ${port}`);
 });
