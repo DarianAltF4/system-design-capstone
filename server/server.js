@@ -14,9 +14,6 @@ app.get('/reviews', (req, res) => {
   const params = req.query;
   getReviews(params)
     .then((results) => {
-      if (results.length === 0) {
-        res.status(404).send('This product does not exist.');
-      } else {
         let response = {
           product: params.product_id,
           page: params.page || 0,
@@ -27,7 +24,6 @@ app.get('/reviews', (req, res) => {
           response.results[i].date = new Date(+results[i].date).toISOString();
         }
         res.send(response);
-      }
     })
     .catch((err) => {
       console.log('GET Reviews ERROR:', err);
@@ -47,9 +43,6 @@ app.get('/reviews/meta', (req, res) => {
 
   getAllReviews(product_id)
     .then((results) => {
-      if (results.length === 0) {
-        res.status(201).send('This product does not exist.');
-      } else {
         let charsAvg = {};
         let charIds = {};
 
@@ -88,7 +81,6 @@ app.get('/reviews/meta', (req, res) => {
 
         response.characteristics = charsAvg;
         res.send(response);
-      }
 
     })
     .catch((err) => {
