@@ -90,7 +90,7 @@ app.get('/reviews/meta', (req, res) => {
 });
 
 app.post('/reviews', (req, res) => {
-  console.log({id: req.body.product_id})
+  console.log({id: req.body})
   postReview(req.body)
     .then((results) => {
       if (results === 'This product does not exist.') {
