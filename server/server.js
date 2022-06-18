@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const path = require('path');
 const cors = require('cors');
 const port = 8024;
 
@@ -149,7 +150,7 @@ app.delete('/reviews/:review_id', (req, res) => {
 });
 
 app.get('/loaderio-0acae19ad6dd40d0d5a26f38e4a73ab4.txt', (req, res) => {
-  res.sendFile('./loaderio-0acae19ad6dd40d0d5a26f38e4a73ab4.txt')
+  res.sendFile(path.join(__dirname,'/loaderio-0acae19ad6dd40d0d5a26f38e4a73ab4.txt'));
 })
 
 app.listen(port, () => {
