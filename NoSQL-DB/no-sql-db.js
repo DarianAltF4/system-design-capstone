@@ -125,7 +125,6 @@ const postReview = (params) => {
       });
     })
     .catch((err) => {
-      console.log(err.message);
       if (err.message === 'Product Does Not Exist') {
         return 'This product does not exist.';
       } else {
