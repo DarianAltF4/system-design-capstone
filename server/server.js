@@ -141,7 +141,7 @@ app.delete('/reviews/:review_id', (req, res) => {
     });
 });
 
-app.get('/loaderio-0efc3124becf711d499d178c2203a97d.txt', (req, res) => {
+app.get('/loaderio-0efc3124becf711d499d178c2203a97d', (req, res) => {
   res.sendFile(path.join(__dirname,'/loaderio-0efc3124becf711d499d178c2203a97d.txt'));
 })
 
