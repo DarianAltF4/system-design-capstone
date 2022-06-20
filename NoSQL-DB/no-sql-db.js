@@ -2,7 +2,8 @@ const {Schema, model, mongoose} = require('mongoose');
 const { v4: uuidv4 } = require('uuid');
 
 require('dotenv').config();
-const user = process.env.USER;
+
+const user = process.env.USERNAME;
 const pass = process.env.PASS;
 
 
