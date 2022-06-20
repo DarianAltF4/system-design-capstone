@@ -1,9 +1,9 @@
 const {Schema, model, mongoose} = require('mongoose');
 const { v4: uuidv4 } = require('uuid');
-const usrname = require('../auth.js').usrname;
-const pwd = require('../auth.js').pwd;
+const user = require('../auth.js').usrname;
+const pass = require('../auth.js').pwd;
 
-mongoose.connect(`mongodb://${usrname}:${pwd}@54.173.25.238/sdc-database`)
+mongoose.connect('mongodb://54.173.25.238/sdc-database', {user, pass})
   .then(() => {
     console.log('Connected to SDC Database!');
   })
