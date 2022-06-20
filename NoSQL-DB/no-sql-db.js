@@ -1,7 +1,11 @@
 const {Schema, model, mongoose} = require('mongoose');
 const { v4: uuidv4 } = require('uuid');
-const user = require('../auth.js').usrname;
-const pass = require('../auth.js').pwd;
+
+require('dotenv').config();
+const user = process.env.USER;
+const pass = process.env.PASS;
+
+
 
 mongoose.connect('mongodb://54.173.25.238/sdc-database', {user, pass})
   .then(() => {
