@@ -5,11 +5,10 @@ require('dotenv').config();
 
 const user = process.env.USERNAME;
 const pass = process.env.PASS;
-const port = process.env.PORT;
 
 
 
-mongoose.connect(`mongodb://44.202.127.25:${port}/sdc-database`, {user, pass})
+mongoose.connect('mongodb://44.202.127.25:27017/sdc-database', {user, pass})
   .then(() => {
     console.log('Connected to SDC Database!');
   })
