@@ -8,7 +8,7 @@ const pass = process.env.PASS;
 
 
 
-mongoose.connect(`mongodb://${user}:${pass}@3.82.233.93:27017/sdc-database`)
+mongoose.connect(`mongodb://${user}:${pass}@52.90.113.5:27017/sdc-database`)
   .then(() => {
     console.log('Connected to SDC Database!');
   })
